@@ -36,4 +36,10 @@ int euclid(int a, int b){
     }
     return b;
 }
+void reduce (int *num, int *den){
+    int gcf  = 0;
+    gcf = euclid(*num, *den);
+    *num = (*num / gcf);
+    *den = (*den / gcf);
+}
 
