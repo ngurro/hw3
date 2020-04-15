@@ -4,24 +4,20 @@
 using namespace std;
 
 int main(){
-char option;
-    do{
-    showMenu();
-    cin >> option;
-    option = tolower(option);
-    
-    switch (option)
-    {
-        case 'a':
+char user;
+    while (true){
+        showMenu();
+        cin >> user;
+        user = tolower(user);
+        if (user == 'a'){
             add();
-            break;
-        case 's':
+        }
+        else if (user == 's'){
             subtract();
+        }
+        else{
             break;
-        default:
-            break;
+        }
     }
-    }
-    while (option != 'q');
     return 0;
 }
