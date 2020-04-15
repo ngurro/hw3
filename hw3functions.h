@@ -14,3 +14,14 @@ void showMenu(){
     cout << endl;
     cout << "Enter your option: ";        
 }
+
+void getRational(int *num, int *den){
+    string str, numstr, denstr;
+    cout << "Please enter fraction (n/d): "; 
+    cin >> str;
+    stringstream s_stream1(str);
+    getline(s_stream1, numstr, '/');
+    getline(s_stream1, denstr, '/');
+    *num = stoi(numstr);
+    *den = stoi(denstr);
+}
