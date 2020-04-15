@@ -25,3 +25,15 @@ void getRational(int *num, int *den){
     *num = stoi(numstr);
     *den = stoi(denstr);
 }
+int euclid(int a, int b){
+    a = abs(a);
+    b = abs(b);
+    int remainder = a % b;
+    while (remainder != 0){
+        a = b;
+        b = remainder;
+        remainder = a % b;
+    }
+    return b;
+}
+
