@@ -43,3 +43,11 @@ void reduce (int *num, int *den){
     *den = (*den / gcf);
 }
 
+void DisplayRational(int num, int den){
+    if (den == 1){
+        cout << num;
+    }
+    else{
+        cout << num << "/" << den; 
+    }
+}
