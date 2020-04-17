@@ -17,6 +17,7 @@ void showMenu(){
 
 void getRational(int *num, int *den){
     string str, numstr, denstr;
+    start:
     cout << "Please enter fraction (n/d): "; 
     cin >> str;
     stringstream s_stream1(str);
@@ -24,6 +25,10 @@ void getRational(int *num, int *den){
     getline(s_stream1, denstr, '/');
     *num = stoi(numstr);
     *den = stoi(denstr);
+    if (*den == 0){
+        cout << "Invalid fraction, please try again." << endl;
+        goto start;
+    }
 }
 int euclid(int a, int b){
     a = abs(a);
@@ -77,5 +82,32 @@ void subtract(){
         user = tolower(user);
         if (user == 'n')
             break;  
+    }
+}
+void add(){
+    int anum, aden, num1, den1, num2, den2;
+    while (true){
+        system ("cls");
+        cout << "Addition of rational numbers" << endl;
+        getRational(&num1, &den1);
+        getRational(&num2, &den2);
+        reduce(&num1, &den1);
+        reduce(&num2, &den2);
+        anum = ((num1 * den2) + (num2 * den1));
+        aden = (den1 * den2); 
+        reduce(&anum, &aden);
+        cout << "The result of ";
+        DisplayRational(num1, den1);
+        cout << " + ";
+        DisplayRational(num2, den2);
+        cout << " = ";
+        DisplayRational(anum, aden);
+        char user;
+        cout << endl;
+        cout << "Do you want to do more additions? (Y/N): ";
+        cin >> user; cin.ignore();
+        user = tolower(user);
+        if (user == 'n')
+            break; 
     }
 }
