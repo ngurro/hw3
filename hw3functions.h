@@ -6,7 +6,7 @@ using namespace std;
 
 void showMenu(){
     system ("cls");
-    cout << "Rational numbers calculator" << endl;
+    cout << "Rational Numbers Calculator" << endl;
     cout << endl;
     cout << "(A)ddition" << endl;
     cout << "(S)ubtraction" << endl;
@@ -18,7 +18,7 @@ void showMenu(){
 void getRational(int *num, int *den){
     string str, numstr, denstr;
     start:
-    cout << "Please enter fraction (n/d): "; 
+    cout << "Please enter a fraction (n/d): "; 
     cin >> str;
     stringstream s_stream1(str);
     getline(s_stream1, numstr, '/');
@@ -61,7 +61,7 @@ void subtract(){
     int anum, aden, num1, den1, num2, den2;
     while (true){
         system ("cls");
-        cout << "Substraction of rational numbers" << endl;
+        cout << "Subtraction of rational numbers" << endl;
         getRational(&num1, &den1);
         getRational(&num2, &den2);
         reduce(&num1, &den1);
@@ -77,7 +77,7 @@ void subtract(){
         DisplayRational(anum, aden);
         char user;
         cout << endl;
-        cout << "Do you want to do more substractions? (Y/N): ";
+        cout << "Do you want to do more subtractions? (Y/N): ";
         cin >> user; cin.ignore();
         user = tolower(user);
         if (user == 'n')
