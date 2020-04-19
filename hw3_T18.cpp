@@ -14,15 +14,21 @@ using namespace std;
 int main(){
 char user;
     while (true){
+        // print showMenu() to the screen
         showMenu();
+        // stores user input in var user
         cin >> user;
+        // converts input from user to lower to accept both lowercase and UPPERCASE input
         user = tolower(user);
+        // if user chooses additon, add() function is called
         if (user == 'a'){
             add();
         }
+        // if user choosed subtraction, subtract() function is called
         else if (user == 's'){
             subtract();
         }
+        // if neither options are chosen, program stops
         else{
             break;
         }
