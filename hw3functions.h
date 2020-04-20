@@ -5,13 +5,16 @@
 using namespace std;
 
 void showMenu(){
+    // will clear the screen when showMenu() is called
     system ("cls");
+    // outputs the menu to the user 
     cout << "Rational Numbers Calculator" << endl;
     cout << endl;
     cout << "(A)ddition" << endl;
     cout << "(S)ubtraction" << endl;
     cout << "(Q)uit" << endl;
     cout << endl;
+    // stores user's response in var user 
     cout << "Enter your option: ";        
 }
 
@@ -31,19 +34,27 @@ void getRational(int *num, int *den){
     }
 }
 int euclid(int a, int b){
+    // gets the absolute value of the greatest common factors
     a = abs(a);
     b = abs(b);
+    // var remainder is equal to 
     int remainder = a % b;
+    // while the remainder is != to 0, the divisor becomes the dividend 
     while (remainder != 0){
         a = b;
         b = remainder;
+        // when the remainder is zero, your divisor becomes your gcf
+        // the divisor that gives you a remainder of zero is your gcf
         remainder = a % b;
     }
     return b;
 }
 void reduce (int *num, int *den){
+    // intitialised gcf var
     int gcf  = 0;
+    // applies Euclid's algorithm to *num and *den to find its gcf
     gcf = euclid(*num, *den);
+    // once the gcf is found, divide both the numerator and denominator by the gcf
     *num = (*num / gcf);
     *den = (*den / gcf);
 }
