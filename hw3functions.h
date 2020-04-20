@@ -38,22 +38,22 @@ void getRational(int *num, int *den){
         cout << "Invalid fraction, please try again." << endl;
         goto start;
     }
-}
-int euclid(int a, int b){
-    // gets the absolute value of the greatest common factors
-    a = abs(a);
-    b = abs(b);
+}                                                                       // Pseudocode for Euclid's algorithm
+int euclid(int a, int b){                                               // Function euclid with int a and int b as arguments                      
+    // gets the absolute value of the greatest common factors           
+    a = abs(a);                                                         //     Convert variable a to its absolute value    
+    b = abs(b);                                                         //     Convert variable b to its absolute value 
     // var remainder is equal to 
-    int remainder = a % b;
+    int remainder = a % b;                                              //     Initialise an integer variable named remainder to a modulus b (the remainder after a is divided by b) 
     // while the remainder is != to 0, the divisor becomes the dividend 
-    while (remainder != 0){
-        a = b;
-        b = remainder;
+    while (remainder != 0){                                             //     WHILE remainder does not equal zero   
+        a = b;                                                          //          a will be equal to b 
+        b = remainder;                                                  //          b will be equal to remainder 
         // when the remainder is zero, your divisor becomes your gcf
         // the divisor that gives you a remainder of zero is your gcf
-        remainder = a % b;
+        remainder = a % b;                                              //          remainder will be equal to a modulus b (the remainder after a is divided by b)
     }
-    return b;
+    return b;                                                           //     Return the value of b
 }
 void reduce (int *num, int *den){
     // intitialised gcf var
