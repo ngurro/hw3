@@ -76,57 +76,58 @@ void DisplayRational(int num, int den){
     }
 }
 
-void subtract(){
-    int anum, aden, num1, den1, num2, den2;
-    while (true){
-        system ("cls");
-        cout << "Subtraction of rational numbers" << endl;
-        getRational(&num1, &den1);
-        getRational(&num2, &den2);
-        reduce(&num1, &den1);
-        reduce(&num2, &den2);
-        anum = ((num1 * den2) - (num2 * den1));
-        aden = (den1 * den2); 
-        reduce(&anum, &aden);
-        cout << "The result of ";
-        DisplayRational(num1, den1);
-        cout << " - ";
-        DisplayRational(num2, den2);
-        cout << " = ";
-        DisplayRational(anum, aden);
-        char user;
-        cout << endl;
-        cout << "Do you want to do more subtractions? (Y/N): ";
-        cin >> user; cin.ignore();
-        user = tolower(user);
-        if (user == 'n')
-            break;  
+void subtract(){                                                 // Function subtract() start     
+    int anum, aden, num1, den1, num2, den2;                      //     Initialise integer variables anum, aden, num1, den1, num2, and den2     
+    while (true){                                                //     WHILE user does not enter 'n' or 'N'
+        system ("cls");                                          //        Clear the console 
+        cout << "Subtraction of rational numbers" << endl;       //        Print Subtraction of rational numbers  
+        getRational(&num1, &den1);                               //        Call function getRational within inputs &num1 and &den1    
+        getRational(&num2, &den2);                               //        Call function getRational within inputs &num2 and &den2 
+        reduce(&num1, &den1);                                    //        Call function reduce within inputs &num1 and &num2 
+        reduce(&num2, &den2);                                    //        Call function reduce within inputs &num2 and &den2 
+        anum = ((num1 * den2) - (num2 * den1));                  //        Initialise variable anum to num1 times den2 minus num2 times den1 
+        aden = (den1 * den2);                                    //        Initialise variable aden to den1 times den2 
+        reduce(&anum, &aden);                                    //        Call function reduce within inputs &anum and &aden
+        cout << "The result of ";                                //        Print The result of 
+        DisplayRational(num1, den1);                             //        Call function DisplayRational within inputs num1 and den1 
+        cout << " - ";                                           //        Print the minus sign (-) 
+        DisplayRational(num2, den2);                             //        Call function DisplayRational within inputs num2 and den2 
+        cout << " = ";                                           //        Print the equal sign (=) 
+        DisplayRational(anum, aden);                             //        Call function DisplayRational within inputs anum and aden 
+        char user;                                               //        Initialise a character variable named user 
+        cout << endl;                                            //        Print a new line 
+        cout << "Do you want to do more subtractions? (Y/N): ";  //        Print Do you want to do more subtractions? (Y/N):  
+        cin >> user; cin.ignore();                               //        Store the response in the char variable user; Ignore the newline from the stream
+        user = tolower(user);                                    //        Convert the user's input to lowercase 
+        if (user == 'n')                                         //        IF user enters 'n' or 'N'
+            break;                                               //             END WHILE LOOP
     }
 }
-void add(){
-    int anum, aden, num1, den1, num2, den2;
-    while (true){
-        system ("cls");
-        cout << "Addition of rational numbers" << endl;
-        getRational(&num1, &den1);
-        getRational(&num2, &den2);
-        reduce(&num1, &den1);
-        reduce(&num2, &den2);
-        anum = ((num1 * den2) + (num2 * den1));
-        aden = (den1 * den2); 
-        reduce(&anum, &aden);
-        cout << "The result of ";
-        DisplayRational(num1, den1);
-        cout << " + ";
-        DisplayRational(num2, den2);
-        cout << " = ";
-        DisplayRational(anum, aden);
-        char user;
-        cout << endl;
-        cout << "Do you want to do more additions? (Y/N): ";
-        cin >> user; cin.ignore();
-        user = tolower(user);
-        if (user == 'n')
-            break; 
+                                                                 // Pseudocode for add() algorithm
+void add(){                                                      // Function add() start 
+    int anum, aden, num1, den1, num2, den2;                      //     Initialise integer variables anum, aden, num1, den1, num2, and den2
+    while (true){                                                //     WHILE user does not enter 'n' or 'N'
+        system ("cls");                                          //         Clear the console
+        cout << "Addition of rational numbers" << endl;          //         Print Addition of rational numbers
+        getRational(&num1, &den1);                               //         Call function getRational within inputs &num1 and &den1
+        getRational(&num2, &den2);                               //         Call function getRational within inputs &num2 and &den2
+        reduce(&num1, &den1);                                    //         Call function reduce within inputs &num1 and &den1
+        reduce(&num2, &den2);                                    //         Call function reduce within inputs &num2 and &den2
+        anum = ((num1 * den2) + (num2 * den1));                  //         Initialise variable anum to num2 times den2 plus num2 times den1
+        aden = (den1 * den2);                                    //         Initialise variable aden to den1 times den2
+        reduce(&anum, &aden);                                    //         Call function reduce within inputs &anum and &aden
+        cout << "The result of ";                                //         Print The result of
+        DisplayRational(num1, den1);                             //         Call function DisplayRational within inputs num1 and den1
+        cout << " + ";                                           //         Print the addition sign (+)
+        DisplayRational(num2, den2);                             //         Call function DisplayRational within inputs num2 and den2
+        cout << " = ";                                           //         Print the equal sign (=)
+        DisplayRational(anum, aden);                             //         Call function DisplayRational within inputs anum and aden
+        char user;                                               //         Initialise a character variable named user
+        cout << endl;                                            //         Print a new line
+        cout << "Do you want to do more additions? (Y/N): ";     //         Print Do you want to do more additions? (Y/N): 
+        cin >> user; cin.ignore();                               //         Store the response in char variable user; Ignore the newline from the stream
+        user = tolower(user);                                    //         Convert the user's input to lowercase
+        if (user == 'n')                                         //         IF user enters 'n' or 'N'
+            break;                                               //             END WHILE LOOP
     }
 }
