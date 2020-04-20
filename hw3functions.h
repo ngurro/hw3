@@ -75,7 +75,7 @@ void DisplayRational(int num, int den){
         cout << num << "/" << den; 
     }
 }
-
+                                                                 // Pseudocode for subtract() algorithm
 void subtract(){                                                 // Function subtract() start     
     int anum, aden, num1, den1, num2, den2;                      //     Initialise integer variables anum, aden, num1, den1, num2, and den2     
     while (true){                                                //     WHILE user does not enter 'n' or 'N'
