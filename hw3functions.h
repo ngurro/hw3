@@ -18,16 +18,22 @@ void showMenu(){
     cout << "Enter your option: ";        
 }
 
-void getRational(int *num, int *den){
+void getRational(int *num, int *den){     
+    // declare string objects                         
     string str, numstr, denstr;
+    // unconditonal jump statement to re-enter fraction if user inputs den = 0
     start:
     cout << "Please enter a fraction (n/d): "; 
+    // stores fraction as one string object in str
     cin >> str;
+    // splits the string str into substrings numstr & denstr using / delimiter
     stringstream s_stream1(str);
     getline(s_stream1, numstr, '/');
     getline(s_stream1, denstr, '/');
+    // converts strings numstr & denstr into integers 
     *num = stoi(numstr);
     *den = stoi(denstr);
+    // jumps back to start: in the function if *den = 0
     if (*den == 0){
         cout << "Invalid fraction, please try again." << endl;
         goto start;
@@ -60,9 +66,11 @@ void reduce (int *num, int *den){
 }
 
 void DisplayRational(int num, int den){
+    //removes the fractional component if its a whole number
     if (den == 1){
         cout << num;
     }
+    // if the result is not a whole number, the fractional component is displayed to the user
     else{
         cout << num << "/" << den; 
     }
