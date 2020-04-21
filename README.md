@@ -28,7 +28,7 @@ The result of `n/d` and `n/d` = `result`
 
 Do you want to do more additions? (Y/N):
 ***
-The first line informs you of which operation you choose. The second and third lines propmt you for the input of two rational numbers.
+The first line informs you of which operation you chose. The second and third lines prompt you for the input of two rational numbers.
 
 >For example, you may enter `1/2` and `1/2`. 
 
@@ -36,7 +36,7 @@ The fourth line will display both fractions and the arithmetic operator you chos
 
 >For example you will see the following: The result of `1/2` + `1/2` = 1
 
-**Every fraction will be in its reduced form by the greatest common factor of both rational numbers.**
+**Every fraction or `result` will be reduced by dividing both the numerator and denominator by the greatest common factor.**
 
 The fifth line will ask you if you want to continue doing arithmetic operations on rational numbers. *Notice that if you choose `A` the program will continue to add, and if you choose `S`, the program will proceed to subtract until you choose otherwise.* If you input `N` or `n`, you will be taken to the Rational Numbers Calculator menu. 
 
